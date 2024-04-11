@@ -1,0 +1,126 @@
+div{
+    display: block;
+}
+
+.wrapper{
+    width: 100%;
+    height: 100px;
+}
+.header{
+    height: 100%;
+    width: 100%;
+}
+.conteiner_1{
+    background: #efefef;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+
+.logo{
+    padding: 0% 0% 0% 4%;
+}
+
+
+.navigation{
+    width: 40%;
+    padding: 0% 0% 0% 30%;
+}
+.navigation_links{
+    margin: 0%;
+    padding: 0px;
+    display: flex;
+    justify-content: space-around;
+}
+.navigation_items{
+    margin: 35px 0% 0% 0%;
+}
+.navigation_button{
+    color: #3a3a3a;
+    font-size: 25px;
+    text-decoration: none;
+    font-family: Calibri, sans-serif;
+}
+.navigation_button:hover{
+    color: #3e8de1;
+    transition: color 300ms ease-out;
+}
+
+
+.authentication{
+    width: 20%;
+}
+.authentication_links{
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    justify-content: space-around;
+}
+.authentication_items{
+    margin: 25px 0% 0% 0%;
+    padding: 15px;
+    background: #3e8de1;
+    border-radius: 30px;
+}
+.authentication_items:hover{
+    background: #184b81;
+    transition: background-color 300ms ease-out;
+}
+.authentication_text{
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: Calibri, sans-serif;
+}
+
+
+.Section_1{
+    height: 80%;
+    width: 100%;
+}
+.Photo_1{
+    height: 100%;
+    width: 100%;
+    box-shadow: 0px 10px 30px black;
+}
+
+.Section_2{
+    height: 100%;
+    width: 100%;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+.conteiner_2{
+    margin-right: 150px;
+    margin-left: 150px;
+}
+.about_clinic{
+    display: flex;
+}
+.about_clinic_text{
+    width: 50%;
+}
+.about_clinic_text_name_text{
+    font-family: Calibri, sans-serif;
+    color: #7a7a7a;
+    font-weight: normal;
+    font-size: 22px;
+}
+.about_clinic_text_name_name{
+    font-family: Calibri, sans-serif;
+    font-weight: bold;
+    color: #3e8de1;
+    font-size: 40px;
+}
+.about_clinic_image{
+    width: 50%;
+}
+.about_clinic_image_pos {
+    text-align: center;
+    position: relative;
+}
+.Photo_2{
+    height: 80%;
+    width: 80%;
+}
