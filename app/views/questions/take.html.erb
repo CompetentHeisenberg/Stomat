@@ -1,0 +1,7 @@
+<h1>Questions:</h1>
+<% @questions.each do |take| %>
+  <h2><%= take.title %></h2>
+  <p>
+    <%= take.body %>
+  </p>
+<% end %>
