@@ -2,13 +2,13 @@
 
 <%= form_with(model: @question, url: questions_path) do |form| %>
   <div class="field">
-    <%= form.label :register %>
-    <%= form.text_field :register_field %>
+    <%= form.label :login %>
+    <%= form.text_field :title %>
   </div>
 
   <div class="field">
     <%= form.label :password %>
-    <%= form.text_area :password_reg %>
+    <%= form.text_area :body %>
   </div>
 
   <div class="actions">
