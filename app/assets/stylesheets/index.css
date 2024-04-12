@@ -1,6 +1,14 @@
 div{
     display: block;
 }
+hr{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    height: 4px;
+    width: 80%;
+    background-color: #e8e8e8;
+    filter: blur(5px);
+}
 
 .wrapper{
     width: 100%;
@@ -18,10 +26,13 @@ div{
 }
 
 
-.logo{
+.Logo{
     padding: 0% 0% 0% 4%;
 }
-
+.Logo_img{
+    height: 100%;
+    width: 100%;
+}
 
 .navigation{
     width: 40%;
@@ -44,7 +55,8 @@ div{
 }
 .navigation_button:hover{
     color: #3e8de1;
-    transition: color 300ms ease-out;
+    font-size: 26px;
+    transition: color 300ms ease-out, font-size 300ms ease-out;
 }
 
 
@@ -80,20 +92,22 @@ div{
     width: 100%;
 }
 .Photo_1{
+    filter: brightness(0.85);
     height: 100%;
     width: 100%;
-    box-shadow: 0px 10px 30px black;
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.29);
 }
 
 .Section_2{
     height: 100%;
     width: 100%;
-    margin-top: 120px;
-    margin-bottom: 120px;
+    margin-top: 170px;
+    margin-bottom: 170px;
+    font-family: Bahnschrift;
 }
 .conteiner_2{
-    margin-right: 150px;
-    margin-left: 150px;
+    margin-right: 220px;
+    margin-left: 220px;
 }
 .about_clinic{
     display: flex;
@@ -101,17 +115,18 @@ div{
 .about_clinic_text{
     width: 50%;
 }
-.about_clinic_text_name_text{
-    font-family: Calibri, sans-serif;
+.about_clinic_text_text_text{
     color: #7a7a7a;
-    font-weight: normal;
-    font-size: 22px;
+    font-weight: lighter;
+    font-size: 19px;
 }
 .about_clinic_text_name_name{
-    font-family: Calibri, sans-serif;
     font-weight: bold;
-    color: #3e8de1;
+    color: #464646;
     font-size: 40px;
+}
+.about_clinic_text_name_name_cl{
+    color: #3e8de1;
 }
 .about_clinic_image{
     width: 50%;
@@ -121,6 +136,81 @@ div{
     position: relative;
 }
 .Photo_2{
-    height: 80%;
-    width: 80%;
+    height: 90%;
+    width: 90%;
 }
+
+
+.Section_3{
+    height: 100%;
+    width: 100%;
+    margin-top: 170px;
+    margin-bottom: 170px;
+    font-family: Bahnschrift;
+}
+.conteiner_3{
+    margin-right: 0px;
+    margin-left: 0px;
+    background-color: #f3f3f3;
+}
+.about_our_advantages{
+    display: flex;
+}
+.about_our_advantages_image{
+    width: 50%;
+    background-image: url("Frame_3.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.about_our_advantages_text{
+    width: 50%;
+}
+.about_our_advantages_text_name{
+    margin-left: 50px;
+    margin-top: 65px;
+}
+.about_our_advantages_text_name_name{
+    font-weight: bold;
+    color: #464646;
+    font-size: 35px;
+}
+.about_our_advantages_text_name_name_cl{
+    color: #3e8de1;
+}
+.about_our_advantages_text_text{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30px;
+    margin-bottom: 75px;
+    display: flex;
+}
+.about_our_advantages_text_text_row{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding: 0;
+    width: 50%;
+    height: 100%;
+}
+.about_our_advantages_text_text_row_list{
+    height: 100%;
+    width: 100%;
+    font-size: 15px;
+    color: #464646;
+    padding-left: 0;
+}
+.about_our_advantages_text_text_row_list_pos{
+    height: 100%;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 20px;
+    list-style-type: none;
+}
+.halochka{
+    height: 15px;
+    width: 15px;
+    left: 0px;
+    position: absolute;
+}
+
+

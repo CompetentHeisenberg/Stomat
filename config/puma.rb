@@ -3,7 +3,7 @@
 # about methods provided by the DSL, see https://puma.io/puma/Puma/DSL.html.
 
 # Puma can serve each request in a thread from an internal thread pool.
-# The `threads` method setting takes two numbers: a minimum and maximum.
+# The `threads` method setting takes two nuцmbers: a minimum and maximum.
 # Any libraries that use thread pools should be configured to match
 # the maximum value specified for Puma. Default is set to 5 threads for minimum
 # and maximum; this matches the default thread size of Active Record.
@@ -23,7 +23,7 @@ end
 worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
 
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
-bind 'tcp://192.168.0.127:3000'
+#bind 'tcp://192.168.0.127:3000'
 port ENV.fetch("PORT") { 3000 }
 
 
@@ -35,3 +35,10 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 
 # Allow puma to be restarted by `bin/rails restart` command.
 plugin :tmp_restart
+
+# Pa holmku sluh pashol
+# Valintayn suma sashol
+# Tralya Trrraaaalyaaaa Tralya
+# Vyes' Holmok tarzhystvuyet
+# Valintayn ochkom blyaduyet
+# Tralyalyalyyaaaaa Traalyalyalyaalayyaaa

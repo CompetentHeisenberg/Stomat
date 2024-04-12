@@ -3,11 +3,13 @@
 <%= form_with(model: @question, url: questions_path) do |form| %>
   <div class="field">
     <%= form.label :login %>
+    <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
     <%= form.label :password %>
+    <%= form.label :body %>
     <%= form.text_area :body %>
   </div>
 

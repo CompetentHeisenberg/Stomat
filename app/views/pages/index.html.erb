@@ -3,8 +3,8 @@
   <div class = "wrapper">
     <header class = "header">
       <div class = "conteiner_1">
-        <div class = "logo">
-          <H1>Логотип</H1>
+        <div class = "Logo">
+          <img class = "Logo_img" src="<%= asset_path('logo.svg') %>" alt="Опис фото">
         </div>
         <div class = "navigation">
           <ul class = "navigation_links">
@@ -28,7 +28,7 @@
               <a class = "authentication_text" href="https://www.youtube.com/">Увійти</a>
             </il>
             <il class = "authentication_items">
-              <%= link_to "Регистрация", new_question_path, class: "btn btn-primary" %>
+              <%= link_to "Реєстрація", new_question_path, class: "authentication_text" %>
             </il>
           </ul>
         </div>
@@ -38,23 +38,24 @@
   <div class="Section_1">
     <img class = "Photo_1" src="<%= asset_path('Frame_1.png') %>" alt="Опис фото">
   </div>
-  <div class = "Section_2">
+  <div class="Section_2">
     <div class="conteiner_2">
       <div class = "about_clinic">
         <div class = "about_clinic_text">
           <div class = "about_clinic_text_name">
             <strong class = "about_clinic_text_name_name">
-              Про нашу клініку
+              Про нашу
+              <span class="about_clinic_text_name_name_cl">КЛІНІКУ</span>
             </strong>
-
           </div>
-          <div>
-            <H2 class = "about_clinic_text_name_text">
+          <div class = "about_clinic_text_text">
+            <H2 class = "about_clinic_text_text_text">
               У нашій клініці ми розуміємо, що кожен пацієнт унікальний, тому ми надаємо індивідуальний підхід до кожного випадку.
               Наші професіонали обладнані не лише найновішими технологіями та знаннями, але і розумінням твоїх особистих потреб і побажань.
-              Від першого візиту до закінчення лікування ми прагнемо забезпечити найвищий стандарт якості та догляду.
+              <br><br>Від першого візиту до закінчення лікування ми прагнемо забезпечити найвищий стандарт якості та догляду.
               Від регулярних чисток до складних стоматологічних процедур, ми дбаємо про твоє здоров'я та комфорт кожного кроку шляху.
               Приходьте до нас і дозвольте нам допомогти вам зберегти ваш усмішку яскравою та здоровою на протязі усього життя.
+              <br><br>Наша клініка надає 2 роки гарантії, томущо ми впевнені в нашій роботі.
             </H2>
           </div>
         </div>
@@ -62,6 +63,88 @@
           <div class = "about_clinic_image_pos">
             <img class = "Photo_2" src="<%= asset_path('Frame_2.jpg') %>" alt="Опис фото">
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="Section_3">
+    <div class="conteiner_3">
+      <div class = "about_our_advantages">
+        <div class="about_our_advantages_text">
+          <div class = "about_our_advantages_text_name">
+            <strong class = "about_our_advantages_text_name_name">
+              Наші
+              <span class="about_our_advantages_text_name_name_cl">ПЕРЕВАГИ</span>
+            </strong>
+          </div>
+          <div class="about_our_advantages_text_text">
+            <div class = "about_our_advantages_text_text_row">
+              <ul class = "about_our_advantages_text_text_row_list">
+                <li class = "about_our_advantages_text_text_row_list_pos">
+                  <img class = "halochka" src="<%= asset_path('Halochka.svg') %>">
+                  Досвітчані фахівці та стоматологи
+                </li>
+                <li class = "about_our_advantages_text_text_row_list_pos">
+                  <img class = "halochka" src="<%= asset_path('Halochka.svg') %>">
+                  Широкий спектр послуг
+                </li>
+                <li class = "about_our_advantages_text_text_row_list_pos">
+                  <img class = "halochka" src="<%= asset_path('Halochka.svg') %>">
+                  Сучасне обладнання
+                </li>
+                <li class = "about_our_advantages_text_text_row_list_pos">
+                  <img class = "halochka" src="<%= asset_path('Halochka.svg') %>">
+                  Комфортні умови
+                </li>
+                <li class = "about_our_advantages_text_text_row_list_pos">
+                  <img class = "halochka" src="<%= asset_path('Halochka.svg') %>">
+                  Персоналізований підхід
+                </li>
+                <li class = "about_our_advantages_text_text_row_list_pos">
+                  <img class = "halochka" src="<%= asset_path('Halochka.svg') %>">
+                  Профілактика
+                </li>
+                <li class = "about_our_advantages_text_text_row_list_pos">
+                  <img class = "halochka" src="<%= asset_path('Halochka.svg') %>">
+                  Гнучкий графік
+                </li>
+                <li class = "about_our_advantages_text_text_row_list_pos">
+                  <img class = "halochka" src="<%= asset_path('Halochka.svg') %>">
+                  Ефективний лікувальний план
+                </li>
+              </ul>
+            </div>
+            <div class = "about_our_advantages_text_text_row">
+              <ul class = "about_our_advantages_text_text_row_list">
+                <li class = "about_our_advantages_text_text_row_list_pos">
+                  <img class = "halochka" src="<%= asset_path('Halochka.svg') %>">
+                  Естетичні рішення
+                </li>
+                <li class = "about_our_advantages_text_text_row_list_pos">
+                  <img class = "halochka" src="<%= asset_path('Halochka.svg') %>">
+                  Інформованість пацієнтів
+                </li>
+                <li class = "about_our_advantages_text_text_row_list_pos">
+                  <img class = "halochka" src="<%= asset_path('Halochka.svg') %>">
+                  Використання безболісних методів
+                </li>
+                <li class = "about_our_advantages_text_text_row_list_pos">
+                  <img class = "halochka" src="<%= asset_path('Halochka.svg') %>">
+                  Система контролю якості
+                </li>
+                <li class = "about_our_advantages_text_text_row_list_pos">
+                  <img class = "halochka" src="<%= asset_path('Halochka.svg') %>">
+                  Доступність консультацій
+                </li>
+                <li class = "about_our_advantages_text_text_row_list_pos">
+                  <img class = "halochka" src="<%= asset_path('Halochka.svg') %>">
+                  Постійне навчання персоналу
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="about_our_advantages_image">
         </div>
       </div>
     </div>
