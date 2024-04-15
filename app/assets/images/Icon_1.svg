@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Шар_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#333333;stroke-width:5;stroke-miterlimit:10;}
+	.st1{fill:#FFFFFF;stroke:#333333;stroke-width:3;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#333333;stroke-width:3;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st4{fill:#FFFFFF;stroke:#333333;stroke-width:4;stroke-miterlimit:10;}
+</style>
+<path class="st0" d="M129.31,124.66H70.69c-6.04,0-10.93-4.89-10.93-10.93V86.28c0-6.04,4.89-10.93,10.93-10.93h58.62
+	c6.04,0,10.93,4.89,10.93,10.93v27.45C140.24,119.76,135.35,124.66,129.31,124.66z"/>
+<rect x="86.82" y="124.66" class="st1" width="26.37" height="6.72"/>
+<rect x="81.84" y="131.38" class="st1" width="36.32" height="6.46"/>
+<line class="st2" x1="59.76" y1="114.43" x2="140.24" y2="113.72"/>
+<line class="st2" x1="91.97" y1="119.41" x2="108.03" y2="119.41"/>
+<line class="st2" x1="121.45" y1="119.41" x2="125.22" y2="119.41"/>
+<rect x="66.43" y="103.67" class="st2" width="5.72" height="5.72"/>
+<line class="st2" x1="74.63" y1="103.67" x2="84.99" y2="103.67"/>
+<line class="st2" x1="74.33" y1="109.38" x2="91.66" y2="109.38"/>
+<path class="st3" d="M91.97,109.38"/>
+<path class="st3" d="M74.63,109.38"/>
+<g>
+	<path class="st4" d="M110.48,96.6c-0.42,2.61-2.62,7.11-4.4,1.58c-1.73-5.41-1.2-8-4.34-11.7c-0.92-1.08-2.58-1.08-3.5,0
+		c-3.14,3.69-2.63,6.3-4.34,11.7c-1.76,5.53-3.98,1.03-4.4-1.58c-2.13-19.25-13.79-21.25-6.45-33.47
+		c4.45-7.41,12.48-3.09,15.63-0.97c0.81,0.54,1.83,0.54,2.63,0c3.14-2.13,11.15-6.45,15.63,0.97
+		C124.28,75.35,112.6,77.35,110.48,96.6z"/>
+</g>
+</svg>
