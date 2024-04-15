@@ -10,6 +10,14 @@ hr{
     background-color: #919191;
     filter: blur(0px);
 }
+.hr_1{
+    border: none;
+    margin-top: 40px;
+    margin-bottom: 4px;
+    height: 4px;
+    width: 20%;
+    background-color: #3e8de1;
+}
 
 .wrapper{
     width: 100%;
@@ -102,8 +110,8 @@ hr{
 .Section_2{
     height: 100%;
     width: 100%;
-    margin-top: 170px;
-    margin-bottom: 170px;
+    margin-top: 130px;
+    margin-bottom: 130px;
     font-family: Bahnschrift;
 }
 .conteiner_2{
@@ -145,8 +153,8 @@ hr{
 .Section_3{
     height: 100%;
     width: 100%;
-    margin-top: 170px;
-    margin-bottom: 170px;
+    margin-top: 130px;
+    margin-bottom: 130px;
     font-family: Bahnschrift;
 }
 .conteiner_3{
@@ -217,8 +225,8 @@ hr{
 .Section_4{
     height: 100%;
     width: 100%;
-    margin-top: 170px;
-    margin-bottom: 170px;
+    margin-top: 130px;
+    margin-bottom: 130px;
     font-family: Bahnschrift;
 }
 .conteiner_4{
@@ -280,6 +288,73 @@ hr{
     font-weight: lighter;
 }
 
+.Section_5{
+    height: 100%;
+    width: 100%;
+    margin-top: 130px;
+    margin-bottom: 130px;
+    font-family: Bahnschrift;
+}
+.conteiner_5{
+    background-color: #f3f3f3;
+}
+.why_choose_us{
+    margin-left: 180px;
+    margin-right: 180px;
+}
+.why_choose_us_grid{
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+}
+.why_choose_us_text{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+}
+.Icon_2{
+    height: 80px;
+    width: 80px;
+}
+.why_choose_us_text_set_1{
+    color: #3e8de1;
+    font-size: 30px;
+    font-weight: normal;
+}
+.why_choose_us_text_set_2{
+    color: #3a3a3a;
+    font-weight: lighter;
+    font-size: 17px;
+}
+.why_choose_us_res_text{
+    text-align: center;
+    padding-top: 80px;
+    color: #3a3a3a;
+    font-weight: normal;
+    font-size: 40px;
+}
 
+.Section_6{
+    height: 100%;
+    width: 100%;
+    margin-top: 130px;
+    font-family: Bahnschrift;
+}
+.conteiner_6{
+    background-color: #3e8de1;
+}
+.footer{
+    margin-right: 200px;
+    margin-left: 200px;
+   padding-top: 20px;
+    padding-bottom: 20px;
+}
+.footer_text{
+    color: #f3f3f3;
+    font-weight: normal;
+    font-size: 20px;
+
+}
 
 
