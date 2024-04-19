@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :questions, only: [:new, :create]
   get "up" => "rails/health#show", as: :rails_health_check
-  get '/questions', to: "questions#take" #/questions
   root 'pages#index'
 end

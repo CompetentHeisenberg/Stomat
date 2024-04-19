@@ -35,8 +35,41 @@
       </div>
     </header>
   </div>
-  <div class="Section_1">
-    <img class = "Photo_1" src="<%= asset_path('Frame_1.png') %>" alt="Опис фото">
+  <div class="all">
+    <input checked type="radio" name="respond" id="desktop">
+      <article id="slider">
+        <input checked type="radio" name="slider" id="switch1">
+        <input type="radio" name="slider" id="switch2">
+        <input type="radio" name="slider" id="switch3">
+        <input type="radio" name="slider" id="switch4">
+        <input type="radio" name="slider" id="switch5">
+
+        <div id="slider">
+          <div id="overflow">
+            <div class="image">
+              <article><img src="<%= asset_path('Slider_1.jpg') %>"></article>
+              <article><img src="<%= asset_path('Slider_2.jpg') %>"></article>
+              <article><img src="<%= asset_path('Slider_3.png') %>"></article>
+              <article><img src="<%= asset_path('Slider_4.jpg') %>"></article>
+              <article><img src="<%= asset_path('Slider_5.jpg') %>"></article>
+            </div>
+          </div>
+        </div>
+        <div id="controls">
+          <label for="switch1"></label>
+          <label for="switch2"></label>
+          <label for="switch3"></label>
+          <label for="switch4"></label>
+          <label for="switch5"></label>
+        </div>
+        <div id="active">
+          <label for="switch1"></label>
+          <label for="switch2"></label>
+          <label for="switch3"></label>
+          <label for="switch4"></label>
+          <label for="switch5"></label>
+        </div>
+      </article>
   </div>
   <div class="Section_2">
     <div class="conteiner_2">
@@ -276,7 +309,7 @@
   <div class="Section_6">
     <div class="conteiner_6">
       <div class="footer">
-        <h1 class="footer_text">Коляничик (Frontend)</h1>
+        <h1 class="footer_text">Колянчик (Frontend)</h1>
         <h1 class="footer_text">Санчізо (Backend)</h1>
         <h1 class="footer_text">ChatGPT (Головний помогатор)</h1>
       </div>
