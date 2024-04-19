@@ -1,0 +1,105 @@
+.registration_wind{
+    background-color: #ededed;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+.registration_form_outside{
+    background-color: #fafafa;
+    height: 600px;
+    width: 420px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -300px 0 0 -210px;
+    border-radius: 30px;
+}
+.registration_form_inside{
+    margin: 10% 10%;
+    text-align: center;
+    font-family: Bahnschrift;
+}
+.regis_text_1{
+    color: #3e8de1;
+    font-weight: normal;
+    font-size: 40px;
+    margin: 0;
+}
+.regis_text_2{
+    color: #3a3a3a;
+    font-weight: normal;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.regis_text_3{
+    color: #3e8de1;
+    font-size: 20px;
+    text-decoration: none;
+}
+.regis_text_3:hover{
+    color: #184b81;
+    transition: color 200ms ease-out;
+}
+.registration_fields{
+    margin-top: 35px;
+}
+.regis{
+    margin-top: 5px;
+}
+.regis_text_pos{
+    padding-left: 35px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    text-align: left;
+}
+.regis_text{
+    color: #7a7a7a;
+}
+input[class="regis_field"] {
+    background-color: white;
+    border: none;
+    outline: 3px solid #e8e8e8;
+    font-family: Bahnschrift;
+    color: #3a3a3a;
+    font-size: 15px;
+    border-radius: 20px;
+    width: 80%;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+input[class="regis_field"]:hover {
+    background-color: white;
+    border: none;
+    outline: 3px solid #3e8de1;
+    border-radius: 20px;
+    width: 80%;
+    height: 30px;
+    padding-left: 10px;
+    transition: outline 300ms ease-out;
+}
+.regis_button_pos{
+    margin-top: 40px;
+}
+.regis_button{
+    background-color: #3e8de1;
+    border: none;
+    border-radius: 40px;
+    padding: 20px;
+    font-size: 20px;
+    color: #f3f3f3;
+}
+.regis_button:hover{
+    background-color: #184b81;
+    transition: background-color 300ms ease-out;
+}
+.return_text{
+    text-decoration: none;
+    color: #3a3a3a;
+    font-size: 13px;
+    font-weight: bold;
+}
+.return_text:hover{
+    color: #131313;
+    transition: color 300ms ease-out;
+}
