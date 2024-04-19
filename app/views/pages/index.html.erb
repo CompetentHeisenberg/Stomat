@@ -1,5 +1,11 @@
 <%= stylesheet_link_tag "index", "data-turbo-track": "reload" %>
 <div class = "main_pages">
+  <% if flash[:notice] %>
+    <div class="notice">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+  <%= current_user.inspect %>
   <div class = "wrapper">
     <header class = "header">
       <div class = "conteiner_1">
@@ -28,7 +34,6 @@
               <a class = "authentication_text" href="https://www.youtube.com/">Увійти</a>
             </il>
             <il class = "authentication_items">
-              <%= link_to "Реєстрація", new_question_path, class: "authentication_text" %>
             </il>
           </ul>
         </div>
