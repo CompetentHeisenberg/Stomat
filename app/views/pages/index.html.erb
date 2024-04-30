@@ -25,7 +25,7 @@
         <div class = "authentication">
           <ul class = "authentication_links">
             <il class = "authentication_items">
-              <a class = "authentication_text" href="https://www.youtube.com/">Увійти</a>
+              <%= link_to "Вхід", new_session_path, class: "authentication_text" %>
             </il>
             <il class = "authentication_items">
               <%= link_to "Реєстрація", new_user_path, class: "authentication_text" %>
@@ -35,6 +35,17 @@
       </div>
     </header>
   </div>
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
+  <% if flash[:success] %>
+    <div class="notice"><%= flash[:success] %></div>
+  <% end %>
+
+  <% if flash[:alert] %>
+    <div class="alert"><%= flash[:alert] %></div>
+  <% end %>
   <div class="all">
     <input checked type="radio" name="respond" id="desktop">
       <article id="slider">
