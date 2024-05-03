@@ -1,0 +1,110 @@
+.authorization_wind{
+    background-color: #ededed;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+.authentication_form_outside{
+    background-color: #fafafa;
+    height: 420px;
+    width: 420px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -210px 0 0 -210px;
+    border-radius: 30px;
+}
+.authentication_form_inside{
+    margin: 10% 10%;
+    text-align: center;
+    font-family: Bahnschrift;
+}
+.authe_text_1{
+    color: #3e8de1;
+    font-weight: normal;
+    font-size: 40px;
+    margin: 0;
+}
+.authe{
+    margin-top: 5px;
+}
+.authe_text_pos{
+    padding-left: 35px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    text-align: left;
+}
+.authe_text{
+    color: #7a7a7a;
+}
+input[class="authe_field"]{
+    background-color: white;
+    border: none;
+    outline: 3px solid #e8e8e8;
+    font-family: Bahnschrift;
+    color: #3a3a3a;
+    font-size: 15px;
+    border-radius: 20px;
+    width: 80%;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+input[class="authe_field"]:hover {
+    background-color: white;
+    border: none;
+    outline: 3px solid #3e8de1;
+    border-radius: 20px;
+    width: 80%;
+    height: 30px;
+    padding-left: 10px;
+    transition: outline 300ms ease-out;
+}
+.authe_button_pos{
+    margin-top: 40px;
+}
+.authe_button{
+    background-color: #3e8de1;
+    border: none;
+    border-radius: 40px;
+    padding: 20px;
+    font-size: 20px;
+    color: #f3f3f3;
+}
+.authe_button:hover{
+    background-color: #184b81;
+    transition: background-color 300ms ease-out;
+}
+.return_text{
+    text-decoration: none;
+    color: #3a3a3a;
+    font-size: 13px;
+    font-weight: bold;
+}
+.return_text:hover{
+    color: #131313;
+    transition: color 300ms ease-out;
+}
+input[class="wrong_password_or_Email"]{
+    background-color: white;
+    border: none;
+    outline: 3px solid #ed9696;
+    font-family: Bahnschrift;
+    color: #3a3a3a;
+    font-size: 15px;
+    border-radius: 20px;
+    width: 80%;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+input[class="wrong_password_or_Email"]:hover{
+    background-color: white;
+    border: none;
+    outline: 3px solid #a30000;
+    border-radius: 20px;
+    width: 80%;
+    height: 30px;
+    padding-left: 10px;
+    transition: outline 300ms ease-out;
+}

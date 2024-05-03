@@ -1,9 +1,49 @@
-<%= form_with(url: sessions_path, local: true) do |f| %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+<%= stylesheet_link_tag "authorization", "data-turbo-track": "reload" %>
+<div class="authorization_wind" >
+  <div class="authentication_form_outside">
+    <div class="authentication_form_inside">
+      <H1 class="authe_text_1">Вхід</H1>
+      <div class="authentication_field">
+        <%= form_with(url: sessions_path, local: true, data: { turbo: false }) do |f| %>
+          <div class="authe">
+            <div class="authe_text_pos">
+              <%= f.label :email, class: "authe_text" %>
+            </div>
+            <div>
+              <%if flash[:alert] %>
+                <%= f.email_field :email, placeholder: "E-mail", class: "wrong_password_or_Email"%>
+              <%else %>
+                <%= f.email_field :email, placeholder: "E-mail", class: "authe_field"%>
+              <%end%>
+            </div>
+          </div>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+          <div class="authe">
+            <div class="authe_text_pos">
+              <%= f.label :password, class: "authe_text" %>
+            </div>
+            <div>
+              <%if flash[:alert] %>
+                <%= f.password_field :password, class: "wrong_password_or_Email"%>
+              <%else %>
+                <%= f.password_field :password, class: "authe_field"%>
+              <%end%>
+            </div>
+          </div>
 
-  <%= f.submit "Увійти" %>
-<% end %>
+          <div class="authe">
+            <div class="authe_button_pos">
+              <%= f.submit "Увійти", class: "authe_button" %>
+            </div>
+          </div>
+          <div class="authe">
+            <div class="authe_button_pos">
+              <%= link_to "Вернутися до головної сторінки", root_path, class: "return_text" %>
+            </div>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

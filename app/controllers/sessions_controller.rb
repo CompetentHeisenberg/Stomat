@@ -7,14 +7,14 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       flash[:success] = "Ви успішно увійшли в систему!"
       session[:user_id] = user.id
+      redirect_to root_path
     else
       flash[:alert] = "Неправильна електронна адреса або пароль"
+      render :new
     end
-    redirect_to root_path
   end
 
   def destroy
-    # Удаляем идентификатор пользователя из сеанса при выходе
     session[:user_id] = nil
     redirect_to root_path, notice: "Ви вийшли з облікового запису"
   end

@@ -24,28 +24,25 @@
         </div>
         <div class = "authentication">
           <ul class = "authentication_links">
-            <il class = "authentication_items">
-              <%= link_to "Вхід", new_session_path, class: "authentication_text" %>
-            </il>
-            <il class = "authentication_items">
-              <%= link_to "Реєстрація", new_user_path, class: "authentication_text" %>
-            </il>
+            <% if user_signed_in? %>
+              <div class="UserName">
+                <div class="UserNameText">
+                  <%= link_to current_user.name, new_session_path, class: "UserNameText" %>
+                </div>
+              </div>
+            <% else %>
+              <il class = "authentication_items">
+                <%= link_to "Вхід", new_session_path, class: "authentication_text" %>
+              </il>
+              <il class = "authentication_items">
+                <%= link_to "Реєстрація", new_user_path, class: "authentication_text" %>
+              </il>
+            <%end %>
           </ul>
         </div>
       </div>
     </header>
   </div>
-  <% if flash[:notice] %>
-    <div class="notice"><%= flash[:notice] %></div>
-  <% end %>
-
-  <% if flash[:success] %>
-    <div class="notice"><%= flash[:success] %></div>
-  <% end %>
-
-  <% if flash[:alert] %>
-    <div class="alert"><%= flash[:alert] %></div>
-  <% end %>
   <div class="all">
     <input checked type="radio" name="respond" id="desktop">
       <article id="slider">
@@ -323,6 +320,7 @@
         <h1 class="footer_text">Колянчик (Frontend)</h1>
         <h1 class="footer_text">Санчізо (Backend)</h1>
         <h1 class="footer_text">ChatGPT (Головний помогатор)</h1>
+        <h1 class="footer_text">:)</h1>
       </div>
     </div>
   </div>

@@ -5,8 +5,7 @@
       <H1 class="regis_text_1">Зареєструватися</H1>
       <h1 class="regis_text_2">
         Вже є акаунт?
-        <a class = "regis_text_3" href="https://www.youtube.com/">
-          Увійти
+        <%= link_to "Увійти", new_session_path, class: "regis_text_3" %>
         </a>
       </h1>
       <%= render 'shared/errors', object: @user %>
@@ -36,7 +35,7 @@
               <%= f.label :пароль, class: "regis_text" %>
             </div>
             <div class="col-sm-10">
-              <%= f.password_field :password, class: "regis_field" %>
+                <%= f.password_field :password, class: "regis_field" %>
             </div>
           </div>
 
@@ -45,7 +44,7 @@
               <%= f.label :підтвердження_паролю, class: "regis_text" %>
             </div>
             <div class="col-sm-10">
-              <%= f.password_field :password_confirmation, class: "regis_field" %>
+                <%= f.password_field :password, class: "regis_field" %>
             </div>
           </div>
 
