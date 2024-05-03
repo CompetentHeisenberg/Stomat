@@ -27,7 +27,7 @@
             <% if user_signed_in? %>
               <div class="UserName">
                 <div class="UserNameText">
-                  <%= link_to current_user.name, new_session_path, class: "UserNameText" %>
+                  <%= link_to "Показать информацию о пользователе", userinfo_path(current_user) %>
                 </div>
               </div>
             <% else %>
