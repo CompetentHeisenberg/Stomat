@@ -1,0 +1,89 @@
+.Line{
+    width: 80%;
+    height: 3px;
+    background-color: #d6d6d6;
+    border: none;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.UserInfo{
+    display: flex;
+    text-align: center;
+    height: 100vh;
+}
+.UserMenu{
+    width: 20%;
+    background-color: #f3f3f3;
+    box-shadow: 1px 0px 15px rgba(0, 0, 0, 0.29);
+}
+.Content{
+    width: 80%;
+}
+.Username{
+    height: 15vh;
+}
+.UserMenuButton{
+    height: 85vh;
+    font-family: Bahnschrift;
+}
+.Usernametext{
+    padding-top: 30px;
+    padding-left: 50px;
+    text-align: left;
+    font-family: Bahnschrift;
+    font-size: 30px;
+    font-weight: bolder;
+    color: #3e8de1;
+}
+.Usernametext2{
+    font-family: Bahnschrift;
+    font-size: 15px;
+    font-weight: bolder;
+    color: #3a3a3a;
+    padding-left: 50px;
+    text-align: left;
+}
+
+.UserMenuButtonPos{
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 40px;
+    text-align: left;
+}
+.navigation_user{
+    padding-left: 0;
+    list-style-type: none;
+}
+.navigation_user_pos{
+    text-align: center;
+    color: #3a3a3a;
+    font-size: 25px;
+    width: 94%;
+    padding: 30px 10px;
+}
+.navigation_user_pos:hover{
+    color: #3a3a3a;
+    font-size: 25px;
+    width: 94%;
+    padding: 30px 10px;
+    background-color: #c5c5c5;
+    border-radius: 20px;
+    animation-name: navigation_button;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+@keyframes navigation_button {
+    0%{
+        background-color: #f3f3f3;
+    }
+    100%{
+        background-color: #c5c5c5;
+    }
+}
+.navigation_user_pos_text{
+    color: #3a3a3a;
+    font-size: 25px;
+    text-decoration: none;
+}
