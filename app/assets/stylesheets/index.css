@@ -1,7 +1,7 @@
 div{
     display: block;
 }
-hr{
+.Line1{
     border: none;
     margin-top: 40px;
     margin-bottom: 4px;
@@ -509,6 +509,14 @@ label, a{
     text-decoration: none;
     font-family: Bahnschrift, sans-serif;
     font-weight: bolder;
+}
+.UserNameText:hover{
+    color: #3e8de1;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: Bahnschrift, sans-serif;
+    font-weight: bolder;
+    transition: color 300ms ease-out;
 }
 
 

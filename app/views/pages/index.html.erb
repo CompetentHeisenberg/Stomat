@@ -26,9 +26,7 @@
           <ul class = "authentication_links">
             <% if user_signed_in? %>
               <div class="UserName">
-                <div class="UserNameText">
-                  <%= link_to "Показать информацию о пользователе", userinfo_path(current_user) %>
-                </div>
+                  <%= link_to current_user.name, userinfo_path(current_user), class: "UserNameText" %>
               </div>
             <% else %>
               <il class = "authentication_items">
@@ -198,7 +196,7 @@
           <H1 class="our_services_text_2">відповідно до ваших потреб</H1>
           <H1 class ="our_services_text_3">У нашій клініці ми пропонуємо широкий спектр стоматологічних послуг, котрі забезпечать вам здорову та приголомшливу посмішку!</H1>
         </div>
-        <hr>
+        <hr class="Line1">
         <div class="our_services_grid">
           <div class="our_services_grid_set">
             <img class = "Icon" src="<%= asset_path('Icon_1.svg') %>">
