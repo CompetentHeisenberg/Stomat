@@ -7,13 +7,13 @@
         <%= form_with(url: sessions_path, local: true, data: { turbo: false }) do |f| %>
           <div class="authe">
             <div class="authe_text_pos">
-              <%= f.label :name, class: "authe_text" %>
+              <%= f.label :email, class: "authe_text" %>
             </div>
             <div>
               <%if flash[:alert] %>
-                <%= f.text_field :name, placeholder: "Name", class: "wrong_password_or_Email"%>
+                <%= f.email_field :email, placeholder: "Email", class: "wrong_password_or_Email"%>
               <%else %>
-                <%= f.text_field :name, placeholder: "Name", class: "authe_field"%>
+                <%= f.email_field :email, placeholder: "Email", class: "authe_field"%>
               <%end%>
             </div>
           </div>

@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: %i[new create]
-  get '/logout', to: 'sessions#destroy', as: 'logout'
   get "/userinfo/:id", to: "userinfo#show", as: :userinfo
   get "up" => "rails/health#show", as: :rails_health_check
   get "/sessions" => "sessions#new"
