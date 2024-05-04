@@ -20,7 +20,7 @@
             Історія лікування
           </li>
           <li class="navigation_user_pos">
-            Вихід
+            <%= link_to 'Вихід', logout_path, data: { turbo_confirm: 'Ви впевнені, що хочете вийти?'}, class: "navigation_user_pos_text"%>
           </li>
         </ul>
       </div>
