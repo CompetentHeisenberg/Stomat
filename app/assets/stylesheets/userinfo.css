@@ -6,6 +6,14 @@
     margin-top: 0;
     margin-bottom: 0;
 }
+.Line2{
+    width: 100%;
+    height: 3px;
+    background-color: #d6d6d6;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 .UserInfo{
     display: flex;
@@ -86,4 +94,138 @@
     color: #3a3a3a;
     font-size: 25px;
     text-decoration: none;
+}
+.userinfo_return_pos{
+    margin-top: 160px;
+}
+.userinfo_return_text{
+    font-family: Bahnschrift;
+    font-size: 13px;
+    font-weight: bolder;
+    color: #3a3a3a;
+    padding-left: 50px;
+    text-align: left;
+    text-decoration: none;
+}
+.userinfo_return_text:hover{
+    font-family: Bahnschrift;
+    font-size: 13px;
+    font-weight: bolder;
+    color: #3e8de1;
+    padding-left: 50px;
+    text-align: left;
+    text-decoration: none;
+    transition: color 250ms ease-out;
+}
+
+.UserProfileContent{
+    text-align: left;
+    margin-left: 12%;
+    margin-right: 12%;
+    margin-top: 4%;
+    font-family: Bahnschrift;
+
+}
+.UserProfileContentHeader{
+    height: 10%;
+}
+.UserProfileContentName{
+    font-size: 45px;
+    color: #3e8de1;
+    font-weight: bolder;
+}
+.UserProfileContentSurname{
+    font-size: 25px;
+    color: #3a3a3a;
+    font-weight: bolder;
+}
+.UserProfileContentSet{
+    font-size: 20px;
+    color: #3a3a3a;
+    font-weight: lighter;
+}
+.ChangePasswordField{
+
+}
+.change_text_pos{
+    padding-left: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    text-align: left;
+}
+.change_text1_pos{
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+.change_text{
+    color: #3a3a3a;
+    font-size: 30px;
+    font-weight: bolder;
+}
+input[class="change_field"] {
+    background-color: white;
+    border: none;
+    outline: 3px solid #e8e8e8;
+    font-family: Bahnschrift;
+    color: #3a3a3a;
+    font-size: 15px;
+    border-radius: 20px;
+    width: 30%;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+input[class="change_field"]:hover {
+    background-color: white;
+    border: none;
+    outline: 3px solid #3e8de1;
+    border-radius: 20px;
+    width: 30%;
+    height: 30px;
+    padding-left: 10px;
+    transition: outline 300ms ease-out;
+}
+.change_button_pos{
+    margin-top: 15px;
+}
+.change_button{
+    width: 16%;
+    height: 50px;
+    background-color: #3e8de1;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    font-family: Bahnschrift;
+    font-size: 15px;
+}
+.change_button:hover{
+    width: 16%;
+    height: 50px;
+    background-color: #184b81;
+    border-radius: 30px;
+    border: none;
+    transition: background-color 250ms ease-out;
+}
+input[class="change_field_incorrect"] {
+    background-color: white;
+    border: none;
+    outline: 3px solid #ed9696;
+    font-family: Bahnschrift;
+    color: #3a3a3a;
+    font-size: 15px;
+    border-radius: 20px;
+    width: 30%;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+input[class="change_field_incorrect"]:hover {
+    background-color: white;
+    border: none;
+    outline: 3px solid #a30000;
+    border-radius: 20px;
+    width: 30%;
+    height: 30px;
+    padding-left: 10px;
+    transition: outline 300ms ease-out;
 }

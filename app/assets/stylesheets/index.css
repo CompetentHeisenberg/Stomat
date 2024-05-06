@@ -518,5 +518,10 @@ label, a{
     font-weight: bolder;
     transition: color 300ms ease-out;
 }
+.Humen{
+    margin-left: 5px;
+    height: 20px;
+    width: 20px;
+}
 
 

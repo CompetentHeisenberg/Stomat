@@ -100,6 +100,6 @@ input[class="regis_field"]:hover {
     font-weight: bold;
 }
 .return_text:hover{
-    color: #131313;
+    color: #3e8de1;
     transition: color 300ms ease-out;
 }

@@ -27,6 +27,7 @@
             <% if user_signed_in? %>
               <div class="UserName">
                   <%= link_to current_user.name, userinfo_path(current_user), class: "UserNameText" %>
+                  <img class = "Humen" src="<%= asset_path('Humen_1.svg') %>" alt="Опис фото">
               </div>
             <% else %>
               <il class = "authentication_items">

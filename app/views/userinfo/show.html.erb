@@ -14,18 +14,110 @@
       <div class="UserMenuButtonPos">
         <ul class="navigation_user">
           <li class="navigation_user_pos">
-            Запис на прийом
+            <%= link_to 'Ваш профіль', yourprofile_path, class: "navigation_user_pos_text" %>
           </li>
           <li class="navigation_user_pos">
-            Історія лікування
+            <%= link_to 'Запис на прийом', appointment_path, class: "navigation_user_pos_text" %>
+          </li>
+          <li class="navigation_user_pos">
+            <%= link_to 'Історія лікування', history_path, class: "navigation_user_pos_text" %>
           </li>
           <li class="navigation_user_pos">
             <%= link_to 'Вихід', logout_path, data: { turbo_confirm: 'Ви впевнені, що хочете вийти?' }, class: "navigation_user_pos_text" %>
           </li>
         </ul>
+        <div>
+          <div class = "userinfo_return_pos">
+            <%= link_to 'Вернутися до головної сторінки', root_path, class: "userinfo_return_text" %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div class="Content">
+    <%if flash[:appointment] %>
+      <div><%=current_user.name %></div>
+    <%elsif flash[:history] %>
+      <div>dsdfdsdasd</div>
+    <%else %>
+      <div class="UserProfileContent">
+        <div class="UserProfileContentHeader">
+          <div class="UserProfileContentName">
+            <%=current_user.name%>
+          </div>
+          <div class="UserProfileContentSurname">
+            Прізвище та імя
+          </div>
+          <div class="UserProfileContentSet">
+            Налаштування вашого профіля
+          </div>
+        </div>
+        <hr class="Line2">
+        <div class="ChangePasswordField">
+          <div class="change_text1_pos">
+            <div class="change_text">Номер телефону</div>
+          </div>
+          <div class="change_text1_pos">
+            <div class="change_text">Пароля</div>
+          </div>
+          <%= form_with model: @user, url: password_path(@user), local: true do |form| %>
+            <div class="regis">
+              <%if flash[:current_password_incorrect] %>
+                <div class="change_text_pos">
+                  <%= form.label :current_password, "Поточний пароль", class: "regis_text" %>
+                </div>
+                <div>
+                  <%= form.password_field :current_password, placeholder: "Не дійсний пароль", class:"change_field_incorrect" %>
+                </div>
+              <%else%>
+                <div class="change_text_pos">
+                  <%= form.label :current_password, "Поточний пароль", class: "regis_text" %>
+                </div>
+                <div>
+                  <%= form.password_field :current_password, class:"change_field" %>
+                </div>
+              <% end %>
+            </div>
+
+            <div class="regis">
+              <div class="change_text_pos">
+                <%= form.label :password, "Новий пароль", class: "regis_text"%>
+              </div>
+              <div>
+                <%= form.password_field :password, class:"change_field" %>
+              </div>
+            </div>
+
+            <div class="regis">
+              <%if flash[:password_confirmation_incorrect] %>
+                <div class="change_text_pos">
+                  <%= form.label :password_confirmation, "Підтвердження паролю", class: "regis_text" %>
+                </div>
+                <div>
+                  <%= form.password_field :password_confirmation, placeholder: "Не правильний пароль", class:"change_field_incorrect" %>
+                </div>
+              <%else %>
+                <div class="change_text_pos">
+                  <%= form.label :password_confirmation, "Підтвердження паролю", class: "regis_text" %>
+                </div>
+                <div>
+                  <%= form.password_field :password_confirmation, class:"change_field" %>
+                </div>
+              <% end %>
+            </div>
+            <%if flash[:ura] %>
+              <div class="regis">
+                <a class="regis_text">Пароль успішно оновлено</a>
+              </div>
+            <% end %>
+            <div class="regis">
+              <div class="change_button_pos">
+                <%= form.submit "Оновити пароль", class: "change_button"%>
+              </div>
+            </div>
+          <%end %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
