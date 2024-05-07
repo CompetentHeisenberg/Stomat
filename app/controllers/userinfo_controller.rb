@@ -1,6 +1,11 @@
 class UserinfoController < ApplicationController
-    def show
-      @user = User.find(params[:id])
+  def show
+    @user = User.find_by(id: params[:id])
+    if @user
+      flash[:success] = "Пользователь найден!"
+    else
+      flash[:error] = "Пользователь не найден."
+      redirect_to root_path
     end
 
     def yourprofile
@@ -17,4 +22,4 @@ class UserinfoController < ApplicationController
       redirect_to userinfo_path(current_user)
     end
   end
-
+end

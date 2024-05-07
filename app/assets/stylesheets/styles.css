@@ -1,0 +1,23 @@
+
+
+.profile-info {
+    margin-bottom: 20px;
+}
+
+.profile-info h2 {
+    margin-top: 0;
+}
+
+.calendar {
+}
+
+
+.appointment-form h2 {
+    margin-top: 0;
+}
+
+.appointment-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+

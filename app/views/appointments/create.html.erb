@@ -1,0 +1,12 @@
+<% if @appointment.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@appointment.errors.count, "помилка") %> в формі:</h2>
+    <ul>
+      <% @appointment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% else %>
+  <p>Ви успішно записалися на процедуру!</p>
+<% end %>
