@@ -26,10 +26,8 @@
             <%= link_to 'Вихід', logout_path, data: { turbo_confirm: 'Ви впевнені, що хочете вийти?' }, class: "navigation_user_pos_text" %>
           </li>
         </ul>
-        <div>
-          <div class = "userinfo_return_pos">
-            <%= link_to 'Вернутися до головної сторінки', root_path, class: "userinfo_return_text" %>
-          </div>
+        <div class = "userinfo_return_pos">
+          <%= link_to 'Вернутися до головної сторінки', root_path, class: "userinfo_return_text" %>
         </div>
       </div>
     </div>
@@ -121,3 +119,4 @@
     <% end %>
   </div>
 </div>
+
