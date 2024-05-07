@@ -229,3 +229,16 @@ input[class="change_field_incorrect"]:hover {
     padding-left: 10px;
     transition: outline 300ms ease-out;
 }
+select[class="change_field"]{
+    background-color: white;
+    border: none;
+    outline: 3px solid #e8e8e8;
+    font-family: Bahnschrift;
+    color: #3a3a3a;
+    font-size: 15px;
+    border-radius: 20px;
+    width: 30%;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}

@@ -17,7 +17,7 @@
             <%= link_to 'Ваш профіль', yourprofile_path, class: "navigation_user_pos_text" %>
           </li>
           <li class="navigation_user_pos">
-            <%= link_to 'Запис на прийом', appointment_path, class: "navigation_user_pos_text" %>
+            <%= link_to 'Запис на прийом', appoint_path, class: "navigation_user_pos_text" %>
           </li>
           <li class="navigation_user_pos">
             <%= link_to 'Історія лікування', history_path, class: "navigation_user_pos_text" %>
@@ -34,8 +34,77 @@
   </div>
   <div class="Content">
     <%if flash[:appointment] %>
-      <div><%=current_user.name %></div>
-    <%elsif flash[:history] %>
+      <div class="UserProfileContent">
+        <div class="UserProfileContentHeader">
+          <div class="UserProfileContentName">
+            Запис до лікаря
+          </div>
+          <div class="UserProfileContentSurname">
+            Виберіть лікаря та дату
+          </div>
+          <div class="UserProfileContentSet">
+          </div>
+        </div>
+        <hr class="Line2">
+        <div class="ChangePasswordField">
+          <%= form_with model: @appointment, url: appointments_path do |f|%>
+            <div class="regis">
+              <div class="change_text_pos">
+                <%= f.label :doctor_id, "Лікар", class: "regis_text" %>
+              </div>
+              <div>
+                <%= f.select :doctor_id, options_for_select([
+                                                              ["Доктор Сміт", "Доктор Сміт"],
+                                                              ["Доктор Джонс", "Доктор Джонс"],
+                                                              ["Доктор Браун", "Доктор Браун"],
+                                                              ["Доктор Вільямс", "Доктор Вільямс"],
+                                                              ["Доктор Міллер", "Доктор Міллер"]
+                                                            ]), { prompt: "Виберіть лікаря" }, class: "change_field" %>
+              </div>
+            </div>
+
+            <div class="regis">
+              <div class="change_text_pos">
+                <%= f.label :procedure_id, "Процедура", class: "regis_text" %>
+              </div>
+              <div>
+                <%= f.select :procedure_id, options_for_select([
+                                                                 ["Огляд у стоматолога", "Огляд у стоматолога"],
+                                                                 ["Планування лікування", "Планування лікування"],
+                                                                 ["Чищення зубів", "Чищення зубів"],
+                                                                 ["Видалення зубного нальоту", "Видалення зубного нальоту"],
+                                                                 ["Заповнення карієсу", "Заповнення карієсу"]
+                                                               ]), { prompt: "Виберіть процедуру" }, class: "change_field" %>
+              </div>
+            </div>
+
+            <div class="regis">
+              <div class="change_text_pos">
+                <%= f.label :date, "Дата", class: "regis_text" %>
+              </div>
+              <div>
+                <%= f.date_field :date, class: "change_field" %>
+              </div>
+            </div>
+
+            <div class="regis">
+              <div class="change_text_pos">
+                <%= f.label :time, "Час", class: "regis_text" %>
+              </div>
+              <div>
+                <%= f.time_field :time, class: "change_field" %>
+              </div>
+            </div>
+
+            <div class="actions">
+              <div class="change_button_pos">
+                <%= f.submit "Записатися", class: "change_button" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+  <%elsif flash[:history] %>
       <div>dsdfdsdasd</div>
     <%else %>
       <div class="UserProfileContent">

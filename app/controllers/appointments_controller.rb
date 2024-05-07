@@ -6,7 +6,7 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = Appointment.new(appointment_params)
     if @appointment.save
-      redirect_to root_path, notice: 'Запис успішно збережено!'
+      redirect_to userinfo_path(current_user)
     else
       render :new
     end
