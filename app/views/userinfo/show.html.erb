@@ -20,7 +20,7 @@
             <%= link_to 'Запис на прийом', appoint_path, class: "navigation_user_pos_text" %>
           </li>
           <li class="navigation_user_pos">
-            <%= link_to 'Історія лікування', history_path, class: "navigation_user_pos_text" %>
+            <%= link_to 'Історія лікування', treatment_history_user_path(@user), class: "navigation_user_pos_text" %>
           </li>
           <li class="navigation_user_pos">
             <%= link_to 'Вихід', logout_path, data: { turbo_confirm: 'Ви впевнені, що хочете вийти?' }, class: "navigation_user_pos_text" %>

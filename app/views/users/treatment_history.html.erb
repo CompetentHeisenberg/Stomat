@@ -1,26 +1,101 @@
-<!-- views/users/treatment_history.html.erb -->
-<h1>Treatment History</h1>
-<table>
-  <thead>
-  <tr>
-    <th>Date</th>
-    <th>Doctor</th>
-    <th>Procedure</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @treatment_histories.each do |treatment_history| %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treatment History</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+      body {
+          font-family: 'Roboto', sans-serif;
+          background-color: #f8f9fa;
+          margin: 0;
+          padding: 20px;
+      }
+
+      header {
+          text-align: center;
+          margin-bottom: 20px;
+      }
+
+      h1 {
+          color: #1a73e8;
+          font-weight: bold;
+          margin-top: 0;
+      }
+
+      main {
+          display: flex;
+          justify-content: center;
+      }
+
+      table {
+          width: 100%;
+          border-collapse: collapse;
+          background-color: #fff;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          border-radius: 8px;
+          overflow: hidden;
+      }
+
+      th, td {
+          padding: 12px;
+          text-align: left;
+          border-bottom: 1px solid #e0e0e0;
+      }
+
+      th {
+          background-color: #f4f4f4;
+          font-weight: bold;
+          color: #555;
+          text-transform: uppercase;
+      }
+
+      tr:nth-child(even) {
+          background-color: #f9f9f9;
+      }
+
+      tr:hover {
+          background-color: #f0f0f0;
+      }
+
+      .no-doctor {
+          color: #d32f2f;
+          font-style: italic;
+      }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Treatment History</h1>
+</header>
+<main>
+  <table>
+    <thead>
     <tr>
-      <td><%= treatment_history.appointment.date %></td>
-      <td>
-        <% if treatment_history.appointment.doctor_id? %>
-          <%= treatment_history.appointment.doctor_id %>
-        <% else %>
-          No Doctor Assigned
-        <% end %>
-      </td>
-      <td><%= treatment_history.appointment.procedure_id %></td>
+      <th scope="col">Date</th>
+      <th scope="col">Doctor</th>
+      <th scope="col">Procedure</th>
+      <th scope="col">Time</th>
     </tr>
-  <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+    <% @treatment_histories.each do |treatment_history| %>
+      <tr>
+        <td><%= treatment_history.appointment.date.strftime("%d %b %Y") %></td>
+        <td>
+          <% if treatment_history.appointment.doctor_id? %>
+            <%= treatment_history.appointment.doctor_id %>
+          <% else %>
+            <span class="no-doctor">No Doctor Assigned</span>
+          <% end %>
+        </td>
+        <td><%= treatment_history.appointment.procedure_id %></td>
+        <td><%= treatment_history.appointment.time.strftime("%I:%M %p") %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</main>
+</body>
+</html>

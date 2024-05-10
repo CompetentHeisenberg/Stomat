@@ -1,0 +1,48 @@
+<!-- app/views/treatment_histories/index.html.erb -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Treatment History</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f4f4f4;
+          margin: 0;
+          padding: 20px;
+      }
+
+      h1 {
+          color: #333;
+      }
+
+      table {
+          width: 100%;
+          border-collapse: collapse;
+          background-color: #fff;
+          border: 1px solid #ddd;
+      }
+
+      th, td {
+          padding: 8px;
+          text-align: left;
+          border-bottom: 1px solid #ddd;
+      }
+
+      th {
+          background-color: #f2f2f2;
+      }
+
+      tr:hover {
+          background-color: #f5f5f5;
+      }
+
+      .no-doctor {
+          color: #f00;
+          font-style: italic;
+      }
+  </style>
+</head>
+<body>
+<%= render partial: 'users/treatment_history', locals: { treatment_histories: @treatment_histories } %>
+</body>
+</html>
