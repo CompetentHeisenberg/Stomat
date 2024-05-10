@@ -1,3 +1,4 @@
+# users_controller.rb
 class UsersController < ApplicationController
   def new
     @user = User.new
@@ -12,6 +13,10 @@ class UsersController < ApplicationController
     else
       render :'users/new'
     end
+  end
+
+  def treatment_history
+    @treatment_histories = current_user.treatment_histories.includes(:appointment)
   end
 
   private

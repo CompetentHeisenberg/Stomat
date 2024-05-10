@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :treatment_histories
   has_secure_password
   validates :email, presence: true, uniqueness: true
   validates :name, presence: true, uniqueness: true, format: { with: /\A[a-zA-Z]+\z/}

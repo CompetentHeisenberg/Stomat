@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
   resources :passwords, only: [:edit, :update]
   resources :appointments, only: [:new, :create]
+  resources :users do
+    get 'treatment_history', on: :member
+  end
   get '/logout', to: 'sessions#destroy', as: 'logout'
   get '/history', to: 'userinfo#history', as: 'history'
   get '/appoint', to: 'userinfo#appoint', as: 'appoint'

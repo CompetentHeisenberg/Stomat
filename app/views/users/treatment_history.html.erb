@@ -1,0 +1,26 @@
+<!-- views/users/treatment_history.html.erb -->
+<h1>Treatment History</h1>
+<table>
+  <thead>
+  <tr>
+    <th>Date</th>
+    <th>Doctor</th>
+    <th>Procedure</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @treatment_histories.each do |treatment_history| %>
+    <tr>
+      <td><%= treatment_history.appointment.date %></td>
+      <td>
+        <% if treatment_history.appointment.doctor_id? %>
+          <%= treatment_history.appointment.doctor_id %>
+        <% else %>
+          No Doctor Assigned
+        <% end %>
+      </td>
+      <td><%= treatment_history.appointment.procedure_id %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
