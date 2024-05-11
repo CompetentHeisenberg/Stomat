@@ -1,0 +1,145 @@
+.reviews{
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    font-family: Bahnschrift;
+}
+.bodyreviewsoutside{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.29);
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+.bodyreviewsinside{
+    padding: 15px;
+}
+.Usernametext3{
+    text-align: left;
+    font-family: Bahnschrift;
+    font-size: 25px;
+    font-weight: bolder;
+    color: #3e8de1;
+}
+.timeview{
+    font-size: 15px;
+    font-weight: lighter;
+}
+.EditButton{
+    background-color: #3e8de1;
+    margin-top: 15px;
+    width: 10%;
+    position: static;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+}
+.EditButton:hover{
+    background-color: #184b81;
+    margin-top: 15px;
+    width: 10%;
+    position: static;
+    border: none;
+    height: 40px;
+    transition: background-color 250ms ease-out;
+}
+.DeleteButton{
+    background-color: #ff4141;
+    margin-top: 15px;
+    width: 10%;
+    position: static;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.DeleteButton:hover{
+    background-color: #bc1a1a;
+    margin-top: 15px;
+    width: 10%;
+    position: static;
+    border: none;
+    height: 40px;
+    margin-left: 30px;
+    margin-right: 30px;
+    transition: background-color 250ms ease-out;
+}
+.ButtonText{
+    color: white;
+    font-family: Bahnschrift;
+    font-weight: lighter;
+    font-size: 15px;
+    text-decoration: none;
+}
+.CreateButtonPos{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.EditButton2{
+    background-color: #3e8de1;
+    margin-top: 15px;
+    width: 15%;
+    position: static;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+}
+.EditButton2:hover{
+    background-color: #184b81;
+    margin-top: 15px;
+    width: 15%;
+    position: static;
+    border: none;
+    height: 40px;
+    border-radius: 15px;
+    transition: background-color 250ms ease-out;
+}
+.EditView{
+}
+.EditViewOutside{
+    width: 70%;
+    height: 100%;
+    margin-right: 15vw;
+    margin-left: 15vw;
+}
+.EditViewInside{
+    padding-top: 4%;
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+.EditField{
+    height: 55vh;
+    width: 98%;
+    font-family: Bahnschrift;
+    font-size: 20px;
+    border: none;
+    border-radius: 20px;
+    outline: 3px solid #e8e8e8;
+    padding: 10px;
+}
+.Usernametext4{
+    text-align: left;
+    font-family: Bahnschrift;
+    font-size: 35px;
+    font-weight: bolder;
+    color: #3e8de1;
+}
+.ButtonSection{
+    display: flex;
+    justify-content: right;
+}
+.ButtonText2{
+    margin-left: 35px;
+    background-color: #3e8de1;
+    border: none;
+    border-radius: 40px;
+    padding: 12px;
+    font-size: 14px;
+    color: #f3f3f3;
+    font-weight: lighter;
+    margin-top:15px;
+}
+.ButtonText2:hover{
+    background-color: #184b81;
+    transition: background-color 250ms ease-out;
+}

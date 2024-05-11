@@ -7,7 +7,6 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = Appointment.new(appointment_params)
     if @appointment.save
-      # Создание записи в истории лечения
       current_user.treatment_histories.create(appointment: @appointment)
       redirect_to userinfo_path(current_user)
     else

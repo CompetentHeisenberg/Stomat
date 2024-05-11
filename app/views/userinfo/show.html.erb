@@ -105,8 +105,10 @@
         </div>
       </div>
   <%elsif flash[:history] %>
-      <div>dsdfdsdasd</div>
-    <%else %>
+      <header>
+        <h1>Treatment History</h1>
+      </header>
+  <%else %>
       <div class="UserProfileContent">
         <div class="UserProfileContentHeader">
           <div class="UserProfileContentName">
@@ -125,7 +127,7 @@
             <div class="change_text">Номер телефону</div>
           </div>
           <div class="change_text1_pos">
-            <div class="change_text">Пароля</div>
+            <div class="change_text">Зміна пароля</div>
           </div>
           <%= form_with model: @user, url: password_path(@user), local: true do |form| %>
             <div class="regis">

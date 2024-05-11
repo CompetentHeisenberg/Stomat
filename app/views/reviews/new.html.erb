@@ -1,0 +1,64 @@
+<div>
+  <div class = "wrapper">
+    <header class = "header">
+      <div class = "conteiner_1">
+        <div class = "Logo">
+          <img class = "Logo_img" src="<%= asset_path('logo.svg') %>" alt="Опис фото">
+        </div>
+        <div class = "navigation">
+          <ul class = "navigation_links">
+            <il class = "navigation_items">
+              <%= link_to "ГОЛОВНА СТОРІНКА", root_path, class: "navigation_button" %>
+            </il>
+            <il class = "navigation_items">
+              <a class = "navigation_button" href="https://www.youtube.com/">НОВИНИ</a>
+            </il>
+            <il class = "navigation_items">
+              <%= link_to "ВІДГУКИ", reviews_path, class: "navigation_button" %>
+            </il>
+            <il class = "navigation_items">
+              <a class = "navigation_button" href="https://www.youtube.com/">КОНТАКТИ</a>
+            </il>
+          </ul>
+        </div>
+        <div class = "authentication">
+          <ul class = "authentication_links">
+            <% if user_signed_in? %>
+              <div class="UserName">
+                <%= link_to current_user.name, userinfo_path(current_user), class: "UserNameText" %>
+                <img class = "Humen" src="<%= asset_path('Humen_1.svg') %>" alt="Опис фото">
+              </div>
+            <% else %>
+              <il class = "authentication_items">
+                <%= link_to "Вхід", new_session_path, class: "authentication_text" %>
+              </il>
+              <il class = "authentication_items">
+                <%= link_to "Реєстрація", new_user_path, class: "authentication_text" %>
+              </il>
+            <%end %>
+          </ul>
+        </div>
+      </div>
+    </header>
+  </div>
+  <div class="EditView">
+    <div class="EditViewOutside">
+      <div class="EditViewInside">
+        <div class="Usernametext4"><%=current_user.name%></div>
+        <%=form_with model: @review do |f| %>
+          <div>
+            <%=f.text_area :body, class:"EditField"%>
+          </div>
+          <div class="ButtonSection">
+            <button class="EditButton">
+              <%= link_to "НАЗАД", reviews_path, class: "ButtonText" %>
+            </button>
+            <div>
+              <%=f.submit "СТВОРИТИ", class: "ButtonText2"%>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

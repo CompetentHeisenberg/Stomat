@@ -1,0 +1,75 @@
+<div>
+  <div class = "wrapper">
+    <header class = "header">
+      <div class = "conteiner_1">
+        <div class = "Logo">
+          <img class = "Logo_img" src="<%= asset_path('logo.svg') %>" alt="Опис фото">
+        </div>
+        <div class = "navigation">
+          <ul class = "navigation_links">
+            <il class = "navigation_items">
+              <%= link_to "ГОЛОВНА СТОРІНКА", root_path, class: "navigation_button" %>
+            </il>
+            <il class = "navigation_items">
+              <a class = "navigation_button" href="https://www.youtube.com/">НОВИНИ</a>
+            </il>
+            <il class = "navigation_items">
+              <%= link_to "ВІДГУКИ", reviews_path, class: "navigation_button" %>
+            </il>
+            <il class = "navigation_items">
+              <a class = "navigation_button" href="https://www.youtube.com/">КОНТАКТИ</a>
+            </il>
+          </ul>
+        </div>
+        <div class = "authentication">
+          <ul class = "authentication_links">
+            <% if user_signed_in? %>
+              <div class="UserName">
+                <%= link_to current_user.name, userinfo_path(current_user), class: "UserNameText" %>
+                <img class = "Humen" src="<%= asset_path('Humen_1.svg') %>" alt="Опис фото">
+              </div>
+            <% else %>
+              <il class = "authentication_items">
+                <%= link_to "Вхід", new_session_path, class: "authentication_text" %>
+              </il>
+              <il class = "authentication_items">
+                <%= link_to "Реєстрація", new_user_path, class: "authentication_text" %>
+              </il>
+            <%end %>
+          </ul>
+        </div>
+      </div>
+    </header>
+  </div>
+  <div class="reviews">
+    <div class="CreateButtonPos">
+      <button class="EditButton2">
+        <%=link_to 'НАПИСАТИ ВІДГУК', new_review_path, class: "ButtonText"%>
+      </button>
+    </div>
+    <div>
+      <%@reviews.each do |reviews| %>
+        <div class="bodyreviewsoutside">
+          <div class="bodyreviewsinside">
+            <div class="Usernametext3"><%=reviews.user.name %></div>
+            <time datatime="<%=reviews.created_at.strftime('%Y-%m-%d') %>" class="timeview">
+              <%=reviews.created_at.strftime('%Y-%m-%d') %>
+            </time>
+            <p>
+              <%=reviews.body %>
+              <br>
+              <%if current_user.present? && current_user.id == reviews.user_id %>
+                <button class="EditButton">
+                  <%=link_to 'РЕДАГУВАТИ', edit_review_path(reviews), class: "ButtonText" %>
+                </button>
+                <button class="DeleteButton">
+                  <%=link_to 'ВИДАЛИТИ',review_path(reviews), data: { "turbo-method": :delete }, class: "ButtonText"%>
+                </button>
+              <% end %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

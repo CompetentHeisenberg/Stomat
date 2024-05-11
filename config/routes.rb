@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
   resources :passwords, only: [:edit, :update]
   resources :appointments, only: [:new, :create]
+  resources :reviews, only:[:new, :create, :edit, :update, :destroy, :index]
   resources :users do
     get 'treatment_history', on: :member
   end

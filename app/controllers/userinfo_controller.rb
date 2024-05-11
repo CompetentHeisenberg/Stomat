@@ -13,10 +13,7 @@ class UserinfoController < ApplicationController
     flash[:yourprofile] = "yourprofile"
     redirect_to userinfo_path(current_user)
   end
-  def history
-    flash[:history] = "history"
-    redirect_to userinfo_path(current_user)
-  end
+
   def appoint
     flash[:appointment] = "appointment"
     redirect_to userinfo_path(current_user)
