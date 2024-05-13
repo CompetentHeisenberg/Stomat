@@ -1,5 +1,4 @@
 class ReviewsController < ApplicationController
-
   before_action :set_review, only: [:edit, :update, :destroy]
   before_action :authorize_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user, only: [:create, :edit, :update, :destroy]
@@ -47,7 +46,7 @@ class ReviewsController < ApplicationController
   end
 
   def authorize_user
-    unless @review.user == current_user
+    unless @review.user == current_user || current_user.role == 'admin'
       redirect_to reviews_path
     end
   end

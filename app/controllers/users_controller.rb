@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.role = 'client'
     if @user.save
       session[:user_id] = @user.id
       flash[:success] = "Welcome to the app pups, #{@user.name}"

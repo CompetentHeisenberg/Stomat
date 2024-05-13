@@ -90,7 +90,6 @@
     position: static;
     border: none;
     height: 40px;
-    border-radius: 15px;
     transition: background-color 250ms ease-out;
 }
 .EditView{
@@ -142,4 +141,8 @@
 .ButtonText2:hover{
     background-color: #184b81;
     transition: background-color 250ms ease-out;
+}
+.Userrole{
+    color: #3a3a3a;
+    font-size: 15px;
 }

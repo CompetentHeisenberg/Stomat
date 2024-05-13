@@ -25,8 +25,13 @@
           <ul class = "authentication_links">
             <% if user_signed_in? %>
               <div class="UserName">
-                <%= link_to current_user.name, userinfo_path(current_user), class: "UserNameText" %>
-                <img class = "Humen" src="<%= asset_path('Humen_1.svg') %>" alt="Опис фото">
+                <%if current_user.role == 'client' %>
+                  <%= link_to current_user.name, userinfo_path(current_user), class: "UserNameText" %>
+                  <img class = "Humen" src="<%= asset_path('Humen_1.svg') %>" alt="Опис фото">
+                <%elsif current_user.role == 'admin' %>
+                  <%= link_to current_user.name, userinfo_path(current_user), class: "UserNameText" %>
+                  <img class = "Humen" src="<%= asset_path('Humen_3.svg') %>" alt="Опис фото">
+                <%end %>
               </div>
             <% else %>
               <il class = "authentication_items">
