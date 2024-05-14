@@ -1,0 +1,6 @@
+.UserList{
+    background-color: #3a3a3a;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}

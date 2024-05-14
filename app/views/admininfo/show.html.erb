@@ -33,16 +33,18 @@
   </div>
   <div class="Content">
     <%if flash[:deleteclient] %>
+      <div class="UserProfileContent">
       <%@users.each do |users| %>
         <%if users.role == 'client' %>
-          <div>
-            <%=users.name %>
+          <div class="UserList">
+            <div><%=users.name %></div>
             <button class="DeleteButton">
               <%=link_to 'ВИДАЛИТИ', user_path(users), data: { "turbo-method": :delete }, class: "ButtonText"%>
             </button>
           </div>
         <% end %>
       <%end %>
+      </div>
     <%elsif flash[:createdoctor] %>
       sdasdsadasd
     <%else %>
@@ -51,18 +53,77 @@
           <div class="UserProfileContentName">
             <%=current_user.name%>
           </div>
-          <div class="UserProfileContentSurname">
-            Прізвище та імя
-          </div>
+          <%if current_user.firstname == nil && current_user.surname == nil%>
+            <div class="UserProfileContentSurname">
+              <div class="change_text">
+                Оновіть своє імя та прізвище
+              </div>
+              <%= form_with model: @user, url: profile_path(@user), local: true do |form| %>
+                <div class="regis">
+                  <div class="change_text_pos">
+                    <%= form.label :firstname, "Імя", class: "regis_text1" %>
+                  </div>
+                  <div>
+                    <%= form.text_field :firstname, class:"change_field" %>
+                  </div>
+                  <div class="change_text_pos">
+                    <%= form.label :surname, "Прізвище", class: "regis_text1" %>
+                  </div>
+                  <div>
+                    <%= form.text_field :surname, class:"change_field" %>
+                  </div>
+                </div>
+                <div class="regis">
+                  <div class="change_button_pos">
+                    <%= form.submit "Оновити дані", class: "change_button"%>
+                  </div>
+                </div>
+              <%end %>
+            </div>
+          <%else %>
+            <div class="UserProfileContentSurname">
+              <%=current_user.firstname %>
+              <%=current_user.surname %>
+              <%if flash[:updatenameadmin]%>
+                <div class="UserProfileContentSurname">
+                  <%= form_with model: @user, url: profile_path(@user), local: true do |form| %>
+                    <div class="regis">
+                      <div class="change_text_pos">
+                        <%= form.label :firstname, "Імя", class: "regis_text1" %>
+                      </div>
+                      <div>
+                        <%= form.text_field :firstname, class:"change_field" %>
+                      </div>
+                      <div class="change_text_pos">
+                        <%= form.label :surname, "Прізвище", class: "regis_text1" %>
+                      </div>
+                      <div>
+                        <%= form.text_field :surname, class:"change_field" %>
+                      </div>
+                    </div>
+                    <div class="regis">
+                      <div class="change_button_pos">
+                        <%= form.submit "Оновити дані", class: "change_button"%>
+                      </div>
+                    </div>
+                  <%end %>
+                </div>
+              <%else %>
+                <div>
+                  <button class="EditButton3">
+                    <%= link_to "ОНОВОТИ ІМЯ ТА ПРІЗВИЩЕ", updatenameadmin_path, class: "ButtonText" %>
+                  </button>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+          <br>
           <div class="UserProfileContentSet">
             Налаштування вашого профіля
           </div>
         </div>
         <hr class="Line2">
         <div class="ChangePasswordField">
-          <div class="change_text1_pos">
-            <div class="change_text">Номер телефону</div>
-          </div>
           <div class="change_text1_pos">
             <div class="change_text">Зміна пароля</div>
           </div>

@@ -24,6 +24,7 @@
     width: 20%;
     background-color: #f3f3f3;
     box-shadow: 1px 0px 15px rgba(0, 0, 0, 0.29);
+    display: block;
 }
 .Content{
     width: 80%;
@@ -241,4 +242,9 @@ select[class="change_field"]{
     height: 30px;
     padding-left: 10px;
     padding-right: 10px;
+}
+.regis_text1{
+    color: #7a7a7a;
+    font-weight: normal;
+    font-size: 15px;
 }

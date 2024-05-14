@@ -61,6 +61,10 @@
         <div class="bodyreviewsoutside">
           <div class="bodyreviewsinside">
             <div class="Usernametext3"><%=reviews.user.name %></div>
+            <div>
+              <%=reviews.user.firstname %>
+              <%=reviews.user.surname%>
+            </div>
             <div class = "Userrole"><%=reviews.user.role %></div>
             <time datatime="<%=reviews.created_at.strftime('%Y-%m-%d') %>" class="timeview">
               <%=reviews.created_at.strftime('%Y-%m-%d') %>

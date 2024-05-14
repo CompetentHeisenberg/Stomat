@@ -14,6 +14,11 @@ class UserinfoController < ApplicationController
     redirect_to userinfo_path(current_user)
   end
 
+  def updatename
+    flash[:updatename] = "updateename"
+    redirect_to userinfo_path(current_user)
+  end
+
   def appoint
     flash[:appointment] = "appointment"
     redirect_to userinfo_path(current_user)

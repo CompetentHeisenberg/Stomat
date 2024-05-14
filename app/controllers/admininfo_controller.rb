@@ -18,4 +18,9 @@ class AdmininfoController < ApplicationController
     flash[:createdoctor] = "createdoctor"
     redirect_to admininfo_path(current_user)
   end
+
+  def updatenameadmin
+    flash[:updatenameadmin] = "updateenameadmin"
+    redirect_to admininfo_path(current_user)
+  end
 end
