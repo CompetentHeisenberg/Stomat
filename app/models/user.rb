@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :treatment_histories
+  has_many :treatment_histories, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_secure_password
   validates :email, presence: true, uniqueness: true

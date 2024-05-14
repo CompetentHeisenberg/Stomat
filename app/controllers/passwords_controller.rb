@@ -9,7 +9,11 @@ class PasswordsController < ApplicationController
       if params[:user][:password] == params[:user][:password_confirmation]
         if @user.update(password_params)
           flash[:ura] = "Password updated successfully!"
-          redirect_to userinfo_path(current_user)
+          if @user.role == 'admin'
+            redirect_to admininfo_path(current_user)
+          else
+            redirect_to userinfo_path(current_user)
+          end
         else
           flash[:error] = @user.errors.full_messages.to_sentence
         end

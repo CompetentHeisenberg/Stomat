@@ -1,5 +1,14 @@
 # users_controller.rb
 class UsersController < ApplicationController
+
+  def index
+
+  end
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to admininfo_path
+  end
   def new
     @user = User.new
   end
