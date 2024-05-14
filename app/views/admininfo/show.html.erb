@@ -46,8 +46,72 @@
       <%end %>
       </div>
     <%elsif flash[:createdoctor] %>
-      sdasdsadasd
-    <%else %>
+      <%= stylesheet_link_tag "registration", "data-turbo-track": "reload" %>
+      <div class="registration_wind">
+        <div class="registration_form_outside">
+          <div class="registration_form_inside">
+            <H1 class="regis_text_1">Зареєструватися</H1>
+            <h1 class="regis_text_2">
+              Вже є акаунт?
+              <%= link_to "Увійти", new_session_path, class: "regis_text_3" %>
+              </a>
+            </h1>
+            <%= render 'shared/errors', object: @user %>
+
+            <div class="registration_fields">
+              <%= form_with model: @user,url: create_doctor_path do |f| %>
+                <div class="regis">
+                  <div class="regis_text_pos">
+                    <%= f.label :email, class: "regis_text"%>
+                  </div>
+                  <div class="col-sm-10">
+                    <%= f.email_field :email, placeholder: "E-mail", class: "regis_field" %>
+                  </div>
+                </div>
+
+                <div class="regis">
+                  <div class="regis_text_pos">
+                    <%= f.label :Імя, class: "regis_text" %>
+                  </div>
+                  <div class="col-sm-10">
+                    <%= f.text_field :name, placeholder: "Name", class: "regis_field" %>
+                  </div>
+                </div>
+
+                <div class="regis">
+                  <div class="regis_text_pos">
+                    <%= f.label :пароль, class: "regis_text" %>
+                  </div>
+                  <div class="col-sm-10">
+                    <%= f.password_field :password, class: "regis_field" %>
+                  </div>
+                </div>
+
+                <div class="regis">
+                  <div class="regis_text_pos">
+                    <%= f.label :підтвердження_паролю, class: "regis_text" %>
+                  </div>
+                  <div class="col-sm-10">
+                    <%= f.password_field :password, class: "regis_field" %>
+                  </div>
+                </div>
+
+                <div class="regis">
+                  <div class="regis_button_pos">
+                    <%= f.submit "Зареєструватися", class: "regis_button" %>
+                  </div>
+                </div>
+                <div class="regis">
+                  <div class="regis_button_pos">
+                    <%= link_to "Вернутися до головної сторінки", root_path, class: "return_text" %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+  <%else %>
       <div class="UserProfileContent">
         <div class="UserProfileContentHeader">
           <div class="UserProfileContentName">

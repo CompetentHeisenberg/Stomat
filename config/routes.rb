@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get '/adminprofile', to: 'admininfo#adminprofile', as: 'adminprofile'
   get '/deleteclient', to: 'admininfo#deleteclient', as: 'deleteclient'
   get '/createdoctor', to: 'admininfo#createdoctor', as: 'createdoctor'
+  post '/create_doctor', to: 'users#create_doctor', as: 'create_doctor'
+  patch '/create_doctor', to: 'users#create_doctor'
   get '/updatenameadmin', to: 'admininfo#updatenameadmin', as: 'updatenameadmin'
   get '/yourprofile', to: 'userinfo#yourprofile', as: 'yourprofile'
   get "/userinfo/:id", to: "userinfo#show", as: :userinfo

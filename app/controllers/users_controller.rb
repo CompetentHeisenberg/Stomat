@@ -13,6 +13,23 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def create_doctor
+    @doctor = User.new(user_params)
+    @doctor.role = 'doctor'
+    if User.exists?(email: @doctor.email) || User.exists?(name: @doctor.name)
+      flash[:error] = "Пользователь с таким email или именем уже существует"
+      render :new, locals: { object: @doctor }
+    else
+      if @doctor.save
+        flash[:success] = "New doctor registered successfully!"
+        redirect_to admininfo_path(current_user)
+      else
+        render :new, locals: { object: @doctor }
+      end
+    end
+  end
+
+
   def create
     @user = User.new(user_params)
     @user.role = 'client'
