@@ -53,13 +53,7 @@
                 <%= f.label :doctor_id, "Лікар", class: "regis_text" %>
               </div>
               <div>
-                <%= f.select :doctor_id, options_for_select([
-                                                              ["Доктор Сміт", "Доктор Сміт"],
-                                                              ["Доктор Джонс", "Доктор Джонс"],
-                                                              ["Доктор Браун", "Доктор Браун"],
-                                                              ["Доктор Вільямс", "Доктор Вільямс"],
-                                                              ["Доктор Міллер", "Доктор Міллер"]
-                                                            ]), { prompt: "Виберіть лікаря" }, class: "change_field" %>
+                <%= f.select :doctor_id, options_for_select(User.where(role: 'doctor').pluck(:name)), { prompt: "Виберіть лікаря" }, class: "change_field" %>
               </div>
             </div>
 

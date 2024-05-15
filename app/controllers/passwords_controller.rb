@@ -11,6 +11,8 @@ class PasswordsController < ApplicationController
           flash[:ura] = "Password updated successfully!"
           if @user.role == 'admin'
             redirect_to admininfo_path(current_user)
+          elsif @user.role == 'doctor'
+            redirect_to doctorinfo_path(current_user)
           else
             redirect_to userinfo_path(current_user)
           end
@@ -19,11 +21,23 @@ class PasswordsController < ApplicationController
         end
       else
         flash[:password_confirmation_incorrect] = "Password and confirmation do not match"
-        redirect_to userinfo_path(current_user)
+        if @user.role == 'admin'
+          redirect_to admininfo_path(current_user)
+        elsif @user.role == 'doctor'
+          redirect_to doctorinfo_path(current_user)
+        else
+          redirect_to userinfo_path(current_user)
+        end
       end
     else
       flash[:current_password_incorrect] = "Current password is incorrect"
-      redirect_to userinfo_path(current_user)
+      if @user.role == 'admin'
+        redirect_to admininfo_path(current_user)
+      elsif @user.role == 'doctor'
+        redirect_to doctorinfo_path(current_user)
+      else
+        redirect_to userinfo_path(current_user)
+      end
     end
   end
 

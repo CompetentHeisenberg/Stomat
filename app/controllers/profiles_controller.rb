@@ -9,6 +9,8 @@ class ProfilesController < ApplicationController
           flash[:nameura] = "Password updated successfully!"
           if @user.role == 'admin'
             redirect_to admininfo_path(current_user)
+          elsif @user.role == 'doctor'
+            redirect_to doctorinfo_path(current_user)
           else
             redirect_to userinfo_path(current_user)
           end

@@ -13,13 +13,13 @@
       <div class="UserMenuButtonPos">
         <ul class="navigation_user">
           <li class="navigation_user_pos">
-            <%= link_to 'Ваш профіль', adminprofile_path, class: "navigation_user_pos_text" %>
+            <%= link_to 'Ваш профіль', doctorprofile_path, class: "navigation_user_pos_text" %>
           </li>
           <li class="navigation_user_pos">
-            <%= link_to 'Видалити акаунти', deleteclient_path, class: "navigation_user_pos_text" %>
+            <%= link_to 'Записи', doctorapointments_path, class: "navigation_user_pos_text" %>
           </li>
           <li class="navigation_user_pos">
-            <%= link_to 'Створити акаунт працівника', createdoctor_path, class: "navigation_user_pos_text" %>
+            <%= link_to 'Історії лікування клієнтів', historyofclient_path, class: "navigation_user_pos_text" %>
           </li>
           <li class="navigation_user_pos">
             <%= link_to 'Вихід', logout_path, data: { turbo_confirm: 'Ви впевнені, що хочете вийти?' }, class: "navigation_user_pos_text" %>
@@ -32,80 +32,9 @@
     </div>
   </div>
   <div class="Content">
-    <%if flash[:deleteclient] %>
-      <div class="UserProfileContent">
-        <div class="ListUser">Список акаунтів</div>
-        <hr class="Line2">
-      <%@users.each do |users| %>
-        <%if users.role == 'client' || users.role == 'doctor' %>
-          <div class="UserList">
-            <div class="ListText">ID: <%=users.id %></div>
-            <div class="ListText"><%=users.name %></div>
-            <div class="ListText"><%=users.role %></div>
-            <button class="DeleteButton5">
-              <%=link_to 'ВИДАЛИТИ', user_path(users), data: { "turbo-method": :delete }, class: "ButtonText"%>
-            </button>
-          </div>
-        <% end %>
-      <%end %>
-      </div>
-    <%elsif flash[:createdoctor] %>
-      <%= stylesheet_link_tag "registration", "data-turbo-track": "reload" %>
-      <div class="UserProfileContent">
-            <H1 class="regis_text_1">Реєстрація</H1>
-            <h1 class="regis_text_2">
-              форма реєстрації працівника
-            </h1>
-            <hr class="Line2">
-            <%= render 'shared/errors', object: @user %>
-
-            <div class="registration_fields">
-              <%= form_with model: @user,url: create_doctor_path do |f| %>
-                <div class="regis">
-                  <div class="regis_text_pos">
-                    <%= f.label :email, class: "regis_text"%>
-                  </div>
-                  <div class="col-sm-10">
-                    <%= f.email_field :email, placeholder: "E-mail", class: "change_field" %>
-                  </div>
-                </div>
-
-                <div class="regis">
-                  <div class="regis_text_pos">
-                    <%= f.label :Імя, class: "regis_text" %>
-                  </div>
-                  <div class="col-sm-10">
-                    <%= f.text_field :name, placeholder: "Name", class: "change_field" %>
-                  </div>
-                </div>
-
-                <div class="regis">
-                  <div class="regis_text_pos">
-                    <%= f.label :пароль, class: "regis_text" %>
-                  </div>
-                  <div class="col-sm-10">
-                    <%= f.password_field :password, class: "change_field" %>
-                  </div>
-                </div>
-
-                <div class="regis">
-                  <div class="regis_text_pos">
-                    <%= f.label :підтвердження_паролю, class: "regis_text" %>
-                  </div>
-                  <div class="col-sm-10">
-                    <%= f.password_field :password, class: "change_field" %>
-                  </div>
-                </div>
-
-                <div class="regis">
-                  <div class="regis_button_pos">
-                    <%= f.submit "Зареєструвати працівника", class: "regis_button" %>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-      </div>
-  <%else %>
+    <%if flash[:doctorapointments] %>
+    <%elsif flash[:historyofclient]%>
+    <%else %>
       <div class="UserProfileContent">
         <div class="UserProfileContentHeader">
           <div class="UserProfileContentName">
@@ -142,7 +71,7 @@
             <div class="UserProfileContentSurname">
               <%=current_user.firstname %>
               <%=current_user.surname %>
-              <%if flash[:updatenameadmin]%>
+              <%if flash[:updatenamedoctor]%>
                 <div class="UserProfileContentSurname">
                   <%= form_with model: @user, url: profile_path(@user), local: true do |form| %>
                     <div class="regis">
@@ -169,7 +98,7 @@
               <%else %>
                 <div>
                   <button class="EditButton3">
-                    <%= link_to "ОНОВОТИ ІМЯ ТА ПРІЗВИЩЕ", updatenameadmin_path, class: "ButtonText" %>
+                    <%= link_to "ОНОВОТИ ІМЯ ТА ПРІЗВИЩЕ", updatenamedoctor_path, class: "ButtonText" %>
                   </button>
                 </div>
               <% end %>

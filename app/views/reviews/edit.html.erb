@@ -11,13 +11,7 @@
               <%= link_to "ГОЛОВНА СТОРІНКА", root_path, class: "navigation_button" %>
             </il>
             <il class = "navigation_items">
-              <a class = "navigation_button" href="https://www.youtube.com/">НОВИНИ</a>
-            </il>
-            <il class = "navigation_items">
               <%= link_to "ВІДГУКИ", reviews_path, class: "navigation_button" %>
-            </il>
-            <il class = "navigation_items">
-              <a class = "navigation_button" href="https://www.youtube.com/">КОНТАКТИ</a>
             </il>
           </ul>
         </div>
@@ -31,6 +25,9 @@
                 <%elsif current_user.role == 'admin' %>
                   <%= link_to current_user.name, admininfo_path(current_user), class: "UserNameText" %>
                   <img class = "Humen" src="<%= asset_path('Humen_3.svg') %>" alt="Опис фото">
+                <%elsif current_user.role == 'doctor' %>
+                  <%= link_to current_user.name, doctorinfo_path(current_user), class: "UserNameText" %>
+                  <img class = "Humen" src="<%= asset_path('Humen_2.svg') %>" alt="Опис фото">
                 <%end %>
               </div>
             <% else %>

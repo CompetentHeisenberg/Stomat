@@ -11,7 +11,7 @@
       <%= render 'shared/errors', object: @user %>
 
       <div class="registration_fields">
-        <%= form_with model: @user do |f| %>
+        <%= form_with model: @user, url: users_path do |f| %>
           <div class="regis">
             <div class="regis_text_pos">
               <%= f.label :email, class: "regis_text"%>
