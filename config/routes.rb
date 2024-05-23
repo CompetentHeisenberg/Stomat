@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: %i[new create destroy index]
   resources :passwords, only: [:edit, :update]
+  resources :updateroles, only: [:update, :edit]
   resources :profiles, only: [:edit, :update]
   resources :appointments, only: [:new, :create]
   resources :reviews, only:[:new, :create, :edit, :update, :destroy, :index]
@@ -30,5 +31,7 @@ Rails.application.routes.draw do
   get "/sessions" => "sessions#new"
   get "/sessions" => "sessions#create"
   get "/sessions" => "sessions#destroy"
+  patch '/confirmed/:id', to: 'treatmentconfirm#confirm', as: 'confirm_treatment'
+  patch '/reject/:id', to: 'treatmentconfirm#reject', as: 'reject_treatment'
   root 'pages#index'
 end

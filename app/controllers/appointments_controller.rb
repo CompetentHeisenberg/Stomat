@@ -1,4 +1,3 @@
-# appointments_controller.rb
 class AppointmentsController < ApplicationController
   def new
     @appointment = Appointment.new

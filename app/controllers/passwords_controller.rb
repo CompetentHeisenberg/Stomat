@@ -1,9 +1,6 @@
 class PasswordsController < ApplicationController
   before_action :find_user
 
-  def edit
-  end
-
   def update
     if @user.authenticate(params[:user][:current_password])
       if params[:user][:password] == params[:user][:password_confirmation]

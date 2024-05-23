@@ -16,7 +16,7 @@
             <%= link_to 'Ваш профіль', adminprofile_path, class: "navigation_user_pos_text" %>
           </li>
           <li class="navigation_user_pos">
-            <%= link_to 'Видалити акаунти', deleteclient_path, class: "navigation_user_pos_text" %>
+            <%= link_to 'Перегляд акаунтів', deleteclient_path, class: "navigation_user_pos_text" %>
           </li>
           <li class="navigation_user_pos">
             <%= link_to 'Створити акаунт працівника', createdoctor_path, class: "navigation_user_pos_text" %>
@@ -36,18 +36,21 @@
       <div class="UserProfileContent">
         <div class="ListUser">Список акаунтів</div>
         <hr class="Line2">
-      <%@users.each do |users| %>
-        <%if users.role == 'client' || users.role == 'doctor' %>
-          <div class="UserList">
-            <div class="ListText">ID: <%=users.id %></div>
-            <div class="ListText"><%=users.name %></div>
-            <div class="ListText"><%=users.role %></div>
-            <button class="DeleteButton5">
-              <%=link_to 'ВИДАЛИТИ', user_path(users), data: { "turbo-method": :delete }, class: "ButtonText"%>
-            </button>
-          </div>
-        <% end %>
-      <%end %>
+        <%@users.each do |users| %>
+          <%if users.role == 'client' || users.role == 'doctor' %>
+            <div class="UserList">
+              <div class="ListText">ID: <%=users.id %></div>
+              <div class="ListText"><%=users.name %></div>
+              <div class="ListText"><%=users.role %></div>
+              <div class="EditButton2">
+                <%= button_to 'ОНОВИТИ СТАТУС', updaterole_path(users), method: :patch, class: "ButtonText" %>
+              </div>
+              <button class="DeleteButton5">
+                <%=link_to 'ВИДАЛИТИ', user_path(users), data: { "turbo-method": :delete }, class: "ButtonText"%>
+              </button>
+            </div>
+          <% end %>
+        <%end %>
       </div>
     <%elsif flash[:createdoctor] %>
       <%= stylesheet_link_tag "registration", "data-turbo-track": "reload" %>
@@ -169,7 +172,7 @@
               <%else %>
                 <div>
                   <button class="EditButton3">
-                    <%= link_to "ОНОВОТИ ІМЯ ТА ПРІЗВИЩЕ", updatenameadmin_path, class: "ButtonText" %>
+                    <%= link_to "Оновити імя та прізвище", updatenameadmin_path, class: "ButtonText" %>
                   </button>
                 </div>
               <% end %>

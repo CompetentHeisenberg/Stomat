@@ -19,9 +19,6 @@
             <%= link_to 'Записи', doctorapointments_path, class: "navigation_user_pos_text" %>
           </li>
           <li class="navigation_user_pos">
-            <%= link_to 'Історії лікування клієнтів', historyofclient_path, class: "navigation_user_pos_text" %>
-          </li>
-          <li class="navigation_user_pos">
             <%= link_to 'Вихід', logout_path, data: { turbo_confirm: 'Ви впевнені, що хочете вийти?' }, class: "navigation_user_pos_text" %>
           </li>
         </ul>
@@ -33,6 +30,109 @@
   </div>
   <div class="Content">
     <%if flash[:doctorapointments] %>
+      <div class="UserProfileContent">
+        <div class="ListUser">Історія записів</div>
+        <hr class="Line2">
+        <% @treatment_histories.each do |treatment_history| %>
+          <%if treatment_history.appointment.doctor_id == current_user.name %>
+            <%if treatment_history.confirmed == true %>
+              <div class="AppointmentListConfirmed">
+                <div class="ListText1">До вас на прийом записався
+                  <%@users.each do |users| %>
+                    <%if treatment_history.user_id == users.id %>
+                      <%=users.firstname %>
+                      <%=users.surname %>
+                      <div>
+                        Login:
+                        <%=users.name %>
+                      </div>
+                      <div>
+                        Процедура:
+                        <%=treatment_history.appointment.procedure_id %>
+                      </div>
+                      <div>
+                        Дата:
+                        <%=treatment_history.appointment.date.strftime("%d %b %Y") %>
+                      </div>
+                      <div>
+                        Час:
+                        <%= treatment_history.appointment.time.strftime("%I:%M %p") %>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+                <div class="ListText2"> Запис: підтверджено </div>
+                <br>
+              </div>
+            <%elsif treatment_history.confirmed == false %>
+              <div class="AppointmentListRejected">
+                <div class="ListText1">До вас на прийом записався
+                  <%@users.each do |users| %>
+                    <%if treatment_history.user_id == users.id %>
+                      <%=users.firstname %>
+                      <%=users.surname %>
+                      <div>
+                        Login:
+                        <%=users.name %>
+                      </div>
+                      <div>
+                        Процедура:
+                        <%=treatment_history.appointment.procedure_id %>
+                      </div>
+                      <div>
+                        Дата:
+                        <%=treatment_history.appointment.date.strftime("%d %b %Y") %>
+                      </div>
+                      <div>
+                        Час:
+                        <%= treatment_history.appointment.time.strftime("%I:%M %p") %>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+                <div class="ListText2"> Запис: відхилено </div>
+                <br>
+              </div>
+            <% else%>
+              <div class="AppointmentList">
+                <div class="ListText1">До вас на прийом записався
+                  <%@users.each do |users| %>
+                    <%if treatment_history.user_id == users.id %>
+                      <%=users.firstname %>
+                      <%=users.surname %>
+                      <div>
+                        Login:
+                        <%=users.name %>
+                      </div>
+                      <div>
+                        Процедура:
+                        <%=treatment_history.appointment.procedure_id %>
+                      </div>
+                      <div>
+                        Дата:
+                        <%=treatment_history.appointment.date.strftime("%d %b %Y") %>
+                      </div>
+                      <div>
+                        Час:
+                        <%= treatment_history.appointment.time.strftime("%I:%M %p") %>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+                <div class="ListText2"> Запис: не підтвердженний </div>
+                <div class="ConandRed">
+                  <div class="ConfirmButton">
+                    <%= button_to 'ПІДТВЕРДИТИ', confirm_treatment_path(treatment_history), method: :patch, class: "ButtonText3" %>
+                  </div>
+                  <div class="DeleteButton2">
+                    <%= button_to 'ВІДХИЛИТИ', reject_treatment_path(treatment_history), method: :patch, class: "ButtonText3" %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <%end%>
+        <% end %>
+      </div>
     <%elsif flash[:historyofclient]%>
     <%else %>
       <div class="UserProfileContent">

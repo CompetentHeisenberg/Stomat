@@ -55,20 +55,16 @@
 }
 .DeleteButton:hover{
     background-color: #bc1a1a;
-    margin-top: 15px;
-    width: 10%;
-    position: static;
-    border: none;
-    height: 40px;
-    margin-right: 30px;
     transition: background-color 250ms ease-out;
 }
 .ButtonText{
     color: white;
     font-family: Bahnschrift;
-    font-weight: lighter;
+    font-weight: normal;
     font-size: 15px;
+    border: none;
     text-decoration: none;
+    background-color: rgba(24, 75, 129, 0);
 }
 .CreateButtonPos{
     margin-top: 20px;
@@ -86,12 +82,6 @@
 }
 .EditButton2:hover{
     background-color: #184b81;
-    margin-top: 15px;
-    width: 15%;
-    position: static;
-    border: none;
-    height: 40px;
-    margin-right: 30px;
     transition: background-color 250ms ease-out;
 }
 .EditView{
@@ -117,6 +107,7 @@
     border-radius: 20px;
     outline: 3px solid #e8e8e8;
     padding: 10px;
+    resize: none;
 }
 .Usernametext4{
     text-align: left;
@@ -156,4 +147,34 @@
     border: none;
     height: 40px;
     border-radius: 20px;
+}
+.EditButton3:hover{
+    background-color: #184b81;
+    transition: background-color 250ms ease-out;
+}
+.ConfirmButton{
+    background-color: #3e8de1;
+    width: 16%;
+    position: static;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+.ConfirmButton:hover{
+    background-color: #184b81;
+    transition: background-color 250ms ease-out;
+}
+.DeleteButton2{
+    background-color: #ff4141;
+    width: 14%;
+    position: static;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+    margin-right: 30px;
+}
+.DeleteButton2:hover{
+    background-color: #730E15;
+    transition: background-color 250ms ease-out;
 }
